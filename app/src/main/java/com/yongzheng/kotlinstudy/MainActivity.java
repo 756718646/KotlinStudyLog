@@ -7,24 +7,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+/**
+ * java的activity
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startHelloWorld();
-            }
-        });
     }
 
-    private void startHelloWorld() {
+    /**
+     * 调用kotlin activity
+     * @param view
+     */
+    public void startKotlinActivity(View view) {
         //调用kotlin
-        People peopleKt = new People(1,"mike2");
-        Toast.makeText(this,"xxx:"+peopleKt.getName(),Toast.LENGTH_SHORT).show();
+        People people = new People(1,"mike2");
+        people.setName("ccc");
+        Toast.makeText(this,"xxx:"+people.getName(),Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this,HelloWorldActivity.class));
     }
 }
