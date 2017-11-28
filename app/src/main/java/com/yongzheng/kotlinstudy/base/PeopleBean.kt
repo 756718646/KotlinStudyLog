@@ -82,3 +82,33 @@ fun cal(expr : Expr) : Int =
 fun testCal(){
     println(cal(Sum(Sum(Num(1),Num(2)),Num(6))))
 }
+
+//2.4.5 代码块作为 "if" 和 "when" 的分支
+
+
+//2.5.2 迭代数字：区间和数列
+fun forFun(startValue : Int , endValue : Int){
+    for (i in startValue..endValue){
+        println("num is $i");
+    }
+}
+
+fun forFun2(startValue : Int , endValue : Int){
+    //downTo 递减， step 每次以2为单位变动
+    for (i in endValue downTo startValue step 2){
+        println("num is $i");
+    }
+}
+
+fun forFun3(startValue : Int , endValue : Int){
+    //使用until则可以使迭代不包含指定的结束值
+    for (i in startValue until endValue){
+        println("num is $i");
+    }
+}
+
+fun forFunTest(){
+    forFun(1,5);
+}
+
+//2.5.3 迭代 map
